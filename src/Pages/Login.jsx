@@ -1,9 +1,59 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { FcGoogle } from 'react-icons/fc'
 
 const Login = () => {
   return (
-    <div>
-      
+    <div className=" max-w-[400px] h-auto flex flex-col justify-between items-center mx-auto mt-16 rounded-md mb-[131px] bg-black">
+      <form className=" text-white py-5 px-8 border-none border-black">
+        <h1 className="text-3xl font-bold mb-5">LogIn</h1>
+        <div className="flex flex-col mt-4 gap-6 ">
+          <input
+            type="email"
+            required="*"
+            placeholder="Email address*"
+            className="bg-transparent border-white
+        rounded-md w-[350px] p-3 text-white border-double border-2"
+          />
+          <input
+            type="password"
+            required="*"
+            placeholder="Password*"
+            className="bg-transparent border-white
+        rounded-md w-[350px] p-3 text-white border-double border-2"
+          />
+          <Link to="/google">
+            <p className='text-xs mt-1 text-blue-200 ml-auto max-w-max'>
+                Forgot Password
+            </p>
+        </Link>
+          <Link to={"/login"}>
+            <button
+              className="bg-red-600 w-[350px] border-none rounded-md
+          text-xl h-12 font-bold flex  items-center justify-center gap-2 p-2"
+            >
+              LogIn
+            </button>
+          </Link>
+          <Link to={"/google"}>
+            <button
+              className="bg-red-600 w-[350px] border-none rounded-md
+          text-xl h-12 font-bold flex  items-center justify-center gap-2 p-2"
+            >
+              LogIn with Google
+              <FcGoogle/>
+            </button>
+          </Link>
+          <div className=" cursor-pointer">
+            <h3 className=" font-light">
+              New to create account ? {"  "}
+              <Link to="/signup" className="font-semibold">
+                SignUp 
+              </Link>
+            </h3>
+          </div>
+        </div>
+      </form>
     </div>
   )
 }

@@ -7,13 +7,14 @@ import OpenRoute from './Components/Auth/OpenRoute';
 import Navbar from './Components/Common/Navbar';
 import About from "./Pages/About";
 import Products from "./Components/Homepage/Product";
+import Footer from './Components/Common/Footer';
 
 
 function App() {
   return (
     <div className="App">
       <div>
-        <Navbar/>
+        <Navbar/> 
       </div>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -23,6 +24,9 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/products' element={<Products/>} />
       </Routes>
+      <div>
+        <Footer/>
+      </div>
     </div>
   );
 }
